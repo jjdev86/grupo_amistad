@@ -5,7 +5,7 @@ exports.create_user = async (req, res) => {
   // creates new user
   const hash = await encrypt(req.body.password);
   try {
-    let user = ({ email, role, first_name, last_name, phone_number } = req.body);
+    let user = ({ email, role, first_name, last_name } = req.body);
     user.password = hash;
     // insert records to db
     await createUser(user);

@@ -9,9 +9,10 @@ CREATE TABLE `User` (
 	`role` varchar(15) NOT NULL,
 	`first_name` varchar(255) NOT NULL,
 	`last_name` varchar(255) NOT NULL,
-	`phone_number` varchar(10) NOT NULL,
 	PRIMARY KEY (`id`)
 );
+
+
 
 CREATE TABLE `Grupo` (
 	`id` INT NOT NULL AUTO_INCREMENT,
