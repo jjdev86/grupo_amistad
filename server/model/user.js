@@ -48,7 +48,7 @@ const deleteUser = async id => {
 };
 
 const allUsers = async () => {
-  let query = 'SELECT email, role, first_name, last_name, phone_number FROM user';
+  let query = 'SELECT id, email, role, first_name, last_name from user';
 
   let users = await pool.query(query);
   try {
