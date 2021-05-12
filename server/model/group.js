@@ -7,17 +7,14 @@ const createGroup = async (group) => {
 
     return response;
   } catch (err) {
-      console.log(err)
     return err;
   }
 };
 
 const getAll = async () => {
-  console.log("request came in to model");
   let query = `Select * from grupo`;
   try {
     let res = await pool.query(query);
-    console.log(res, `response from db`);
     return res;
   } catch (err) {
     return err;
