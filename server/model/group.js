@@ -1,11 +1,10 @@
 const  {pool} = require('../db/db');
 
 const createGroup = async (group) => {
+  let query = `INSERT INTO grupo (group_name) VALUES("${group}")`;
   try {
-    let query = `INSERT INTO grupo (group_name) VALUES("${group}")`;
-    let response = await pool.query(query);
-
-    return response;
+    let insertGroup = await pool.query(query);
+    return insertGroup;
   } catch (err) {
     return err;
   }
@@ -14,8 +13,8 @@ const createGroup = async (group) => {
 const getAll = async () => {
   let query = `Select * from grupo`;
   try {
-    let res = await pool.query(query);
-    return res;
+    let allGroups = await pool.query(query);
+    return allGroups;
   } catch (err) {
     return err;
   }
