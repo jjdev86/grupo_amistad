@@ -1,7 +1,8 @@
 const  {pool} = require('../db/db');
 
 const createGroup = async (group) => {
-  let query = `INSERT INTO grupo (group_name) VALUES("${group}")`;
+
+  let query = `INSERT INTO grupo (group_name, leader_first, leader_last, leader_email) VALUES("${group.group_name}", "${group.leader_first}", "${group.leader_last}", "${group.leader_email}")`;
   try {
     let insertGroup = await pool.query(query);
     return insertGroup;
