@@ -9,7 +9,7 @@ exports.create_group = async (req, res) => {
     });
   } else {
     try {
-      let response = await createGroup(req.body.group_name);
+      let response = await createGroup(req.body);
       // check if gruop was previously added
       if (response.code !== "ER_DUP_ENTRY") {
         res.status(201).json({
