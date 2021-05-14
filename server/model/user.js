@@ -2,7 +2,7 @@ const  {pool} = require('../db/db');
 // createUser take a user object
 const createUser = async user => {
   // insert records to db
-  const query = `INSERT INTO User (email, password, role, first_name, last_name) VALUES ("${user.email}", "${user.password}","${user.role}","${user.first_name}", "${user.last_name}")`;
+  const query = `INSERT INTO user (email, password, role, first_name, last_name) VALUES ("${user.email}", "${user.password}","${user.role}","${user.first_name}", "${user.last_name}")`;
 
   const newUser = await pool.query(query);
   try {
@@ -15,7 +15,7 @@ const createUser = async user => {
 const retrivePassword = async user => {
 
   // SELECT CONVERT(column USING utf8)
-  const query = `SELECT CONVERT (password USING utf8) password from User
+  const query = `SELECT CONVERT (password USING utf8) password from user
                   WHERE email = '${user.email}'`;
   let hash = await pool.query(query);
   try {
