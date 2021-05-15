@@ -4,11 +4,9 @@ const createReport = async (report) => {
   const sql = 
         `INSERT INTO report SET ?`;
   try {
-    console.log(report);
     let reportCreated = await pool.query(sql, [report]);
     return reportCreated;
   } catch (err) {
-    console.log(err, "error?");
     return err;
   }
 };
