@@ -37,6 +37,7 @@ CREATE TABLE `member` (
 	`isChild` BOOLEAN NOT NULL,
 	`group_id` INT NOT NULL,
 	`firstlast` varchar(45) NOT NULL,
+	`isGuest` BOOLEAN NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -69,9 +70,9 @@ CREATE TABLE `report` (
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO role (role) VALUES ("Admin");
-INSERT INTO role (role) VALUES ("Supervisor");
-INSERT INTO role (role) VALUES ("Leader");
+INSERT INTO role (role) VALUES ("admin");
+INSERT INTO role (role) VALUES ("supervisor");
+INSERT INTO role (role) VALUES ("leader");
 
 ALTER TABLE `member` ADD INDEX `firstlast_id_index` (`firstlast`);
 
