@@ -15,6 +15,7 @@ CREATE TABLE `user` (
 	`role` varchar(15) NOT NULL,
 	`first_name` varchar(255) NOT NULL,
 	`last_name` varchar(255) NOT NULL,
+
 	PRIMARY KEY (`id`)
 );
 
@@ -35,6 +36,7 @@ CREATE TABLE `member` (
 	`last_name` varchar(255) NOT NULL,
 	`isChild` BOOLEAN NOT NULL,
 	`group_id` INT NOT NULL,
+	`firstlast` varchar(45) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -71,6 +73,7 @@ INSERT INTO role (role) VALUES ("Admin");
 INSERT INTO role (role) VALUES ("Supervisor");
 INSERT INTO role (role) VALUES ("Leader");
 
+ALTER TABLE `member` ADD INDEX `firstlast_id_index` (`firstlast`);
 
 -- ALTER TABLE `member` ADD CONSTRAINT `member_fk0` FOREIGN KEY (`group_id`) REFERENCES `grupo`(`id`);
 
