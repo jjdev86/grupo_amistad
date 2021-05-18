@@ -4,7 +4,6 @@ const addMember = async (member) => {
 // adds new member to member table
     member.firstlast = `${member.first_name}${member.last_name}`.toLocaleLowerCase();
   if (await memberExists(member.firstlast)) {
-    console.log('member exists')
     let err = new Error();
     err.message = "The member already exists"
     throw err;

@@ -38,7 +38,6 @@ exports.getGroups = async (req, res) => {
       error: err
     });
   }
-
 };
 exports.change_group = async (req, res) => {};
 exports.delete_group = async (req, res) => {};
