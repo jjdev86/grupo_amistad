@@ -13,7 +13,6 @@ exports.create_user = async (req, res) => {
       message: "User created"
     });
   } catch (err) {
-    // console.log(err);
     res.status(500).json({
       error: err
     });
