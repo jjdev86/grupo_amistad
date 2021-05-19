@@ -27,6 +27,7 @@ CREATE TABLE `grupo` (
 	`leader_first` varchar(30) NOT NULL,
 	`leader_last` varchar(30) NOT NULL,
 	`leader_email` varchar(45) NOT NULL UNIQUE,
+	`groupname` varchar(45) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 

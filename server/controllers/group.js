@@ -10,18 +10,10 @@ exports.create_group = async (req, res) => {
   } else {
     try {
       let response = await createGroup(req.body);
-      // check if gruop was previously added
-      if (response.code !== "ER_DUP_ENTRY") {
         res.status(201).json({
-          message: "Group created",
+          message: response,
         });
-      } else {
-        res.status(400).json({
-          message: "The group name already exists, try a new group",
-        });
-      }
     } catch (err) {
-      console.log(err);
       res.status(500).json({
         error: err,
       });
